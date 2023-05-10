@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class='container' style='margin-top:100px; display:flex; place-content:center; '>
+        <div class='main' style='width:500px; border:1px solid gray; padding:10px; border-radius:5px;'> 
+        <h3 style='text-align:center;'>Update Record</h3>
+    <form action="" method='POST' enctype="multipart/form-data">   
+        {% csrf_token %} 
+            <div class="mb-3">
+              <label for="task" class="form-label"> Enter Task </label>
+              <input type="text" class="form-control" name='task' placeholder='Enter task' value="{{task}}">
+            </div>
+            <div class="mb-3">
+              <label for="stime" class="form-label"> Start Time </label>
+              <input type="time" class="form-control" name='stime' placeholder='Enter start time' value="{{start_time}}">
+          </div>
+          <div class="mb-3">
+            <label for="etime" class="form-label"> End Time </label>
+            <input type="time" class="form-control" name='etime' placeholder='Enter end time' value="{{end_time}}">
+        </div>
+            <div class="mb-3">
+                <label for="date" class="form-label"> Completed Date </label>
+                <input type="date" class="form-control" name='date' placeholder='Enter completed date' value="{{date}}">
+            </div>
+            <div class="mb-3">
+                <label for="status" class="form-label"> Final Status </label>
+                <select id="cars" name='status' class="form-control" value="{{status}}">
+                      <option value="Completed">Completed</option>
+                      <option value="Pending">Pending</option>
+                      <option value="Progress">Progress</option>
+                </select>
+                <div class='m-2' style='display:flex; justify-content:space-between;'>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a href='/' class="btn btn-primary"> Back </a >
+                </div>
+            </div>
+          </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
